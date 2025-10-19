@@ -1,5 +1,5 @@
 # 🧬 ARISE 
-#### *Aging Reversal In-Silico Evaluation*
+### *Aging Reversal In-Silico Evaluation*
 
 **ARISE** is an AI-powered simulation engine that virtually tests and ranks potential aging-reversal therapies.  
 It lets researchers and clinicians explore thousands of synthetic interventions using public datasets—no wet lab required—and generates standardized, clinician-ready reports that balance **rejuvenation potential** with **safety confidence**.
