@@ -27,6 +27,12 @@ pip install -r requirements.txt
 
 Then open http://localhost:8501 in your browser.
 You’ll see the ARISE interface matching the official logo and theme.
+## 🔁 5-minute autopush
+
+- Windows: `./dev/autopush.ps1`
+- Unix/WSL: `./dev/autopush.sh`
+
+Commits to `develop` every 5 minutes with a succinct message. Type `c` at the prompt to continue another 5 minutes.
 
 
 ---
