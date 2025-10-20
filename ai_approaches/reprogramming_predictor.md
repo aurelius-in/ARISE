@@ -34,3 +34,40 @@ Roadmap
 1) Baseline gradient boosting with program features
 2) Add GNN interaction terms for TF combos
 3) Joint multi-task training with safety sentinel
+
+### Architecture Overview
+```mermaid
+flowchart LR
+  D[Datasets: Perturb-seq, LINCS, Aging Atlas] --> F[Feature Builder]
+  F -->|program scores, motifs, graph feats| M1[GBM Ranker]
+  F --> M2[GNN Combo Model]
+  F --> M3[Schedule Head]
+  M1 --> FUS[Fusion + Calibration]
+  M2 --> FUS
+  M3 --> FUS
+  FUS --> OUT[Rejuvenation Score + Uncertainty]
+```
+
+### Training Loop
+```mermaid
+sequenceDiagram
+  participant TR as Trainer
+  participant DS as Dataloaders
+  participant MOD as Models
+  TR->>DS: sample batches (cell types held-out)
+  DS-->>TR: features, labels (program uplift)
+  TR->>MOD: forward pass (GBM/GNN/Schedule)
+  MOD-->>TR: losses (ranking + regularizers)
+  TR->>MOD: update (optimize)
+  TR-->>TR: calibrate and validate
+```
+
+### Feature Graph (Example)
+```mermaid
+graph TD
+  OSK -->|activates| youthful_programs
+  MYC -->|increases| proliferation
+  SIRT1 -->|modulates| epigenetic_state
+  youthful_programs --> rejuvenation_score
+  proliferation -.penalty.-> rejuvenation_score
+```

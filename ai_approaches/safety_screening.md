@@ -23,3 +23,24 @@ Roadmap
 1) Program-based logistic baseline with priors
 2) Add conformal calibration and cost-sensitive training
 3) Integrate weakly supervised histology signals
+
+### Safety Architecture
+```mermaid
+flowchart LR
+  G[Gene Programs] --> RISK[Risk Head]
+  H[Histology Signals] --> RISK
+  P[Prior Rules] --> RISK
+  RISK --> CAL[Conformal Calibrator]
+  CAL --> OUT[SafetyRisk + Flags]
+```
+
+### Decision Logic (Sketch)
+```mermaid
+graph TD
+  A[Pluripotency High?] -->|yes| R1[Flag High Risk]
+  A -->|no| B[Cell Cycle Elevated?]
+  B -->|yes| R2[Flag Medium Risk]
+  B -->|no| C[Histology Anomaly?]
+  C -->|yes| R3[Flag Review]
+  C -->|no| SAFE[Pass]
+```
