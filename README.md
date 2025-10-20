@@ -23,6 +23,10 @@ ARISE was built to **accelerate and de-risk longevity research** by combining mo
 git clone https://github.com/<your-org>/ARISE.git
 cd ARISE
 pip install -r requirements.txt
+# Windows
+./run.ps1
+
+# macOS/Linux/WSL
 ./run.sh
 
 Then open http://localhost:8501 in your browser.
