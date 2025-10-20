@@ -1,0 +1,12 @@
+.git
+.gitignore
+.github
+__pycache__
+*.pyc
+.venv
+venv
+reports
+.ai
+.ipynb_checkpoints
+.DS_Store
+.env

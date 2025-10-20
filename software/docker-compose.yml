@@ -7,4 +7,13 @@ services:
       - ..:/app
     environment:
       - DATA_ROOT=/app/data
+    command: streamlit run src/ui/app.py --server.port=8501 --server.address=0.0.0.0
+
+  api:
+    build: ..
+    command: uvicorn src.api.app:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ..:/app
 
