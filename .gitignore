@@ -1,0 +1,14 @@
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+.env
+reports/
+!reports/.gitkeep
+*.pdf
+*.csv
+*.pyc
+/.idea/
+/.vscode/
+software/.env
+

@@ -1,0 +1,9 @@
+* text=auto
+
+# Ensure shell scripts keep LF in repo but convert on checkout if configured
+*.sh text eol=lf
+*.ps1 text eol=crlf
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
