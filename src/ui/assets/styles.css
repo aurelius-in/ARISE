@@ -1,0 +1,3 @@
+:root{ --brand:#0E2A3E; --accent:#2B7BBB; --ink:#0B1320; --muted:#6B7B8C; }
+body{ color:var(--ink); }
+
